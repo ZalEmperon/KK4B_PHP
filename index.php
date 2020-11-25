@@ -18,7 +18,7 @@
 			//data akan diedit
 			$edit = mysqli_query($koneksi, "UPDATE siswa set
 												nama = '$_POST[nama]',
-												nim = '$_POST[nis]',
+												nis = '$_POST[nis]',
 												alamat = '$_POST[alamat]',
 												jurusan = '$_POST[jurusan]'
 											WHERE id = '$_GET[id]'
