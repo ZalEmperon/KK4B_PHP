@@ -1,9 +1,9 @@
 <?php 
 	//koneksi database
 	$server = "localhost";
-	$user = "root";
-	$pass = "";
-	$database = "databasee";
+	$user = "id15500449_bimaadhi";
+	$pass = "9o[Ei#E4j-T+D1S5";
+	$database = "id15500449_siswa";
 
 	global $koneksi;
 	$koneksi = mysqli_connect($server, $user, $pass, $database)or die(mysqli_error($koneksi));
@@ -17,10 +17,10 @@
 		{
 			//data akan diedit
 			$edit = mysqli_query($koneksi, "UPDATE siswa set
-												nim = '$_POST[nama]',
-												nama = '$_POST[nis]',
+												nama = '$_POST[nama]',
+												nim = '$_POST[nis]',
 												alamat = '$_POST[alamat]',
-												prodi = '$_POST[jurusan]'
+												jurusan = '$_POST[jurusan]'
 											WHERE id = '$_GET[id]'
 											 ");
 			if($edit)
@@ -77,10 +77,10 @@
 			if($data)
 			{
 				//jika data ditemukan ditampung ke variable
-				$vnim = $data['nama'];
-				$vnama = $data['nis'];
-				$valamat = $data['alamat'];				
-				$vprodi = $data['jurusan'];
+				$nama = $data['nama'];
+				$nis = $data['nis'];
+				$alamat = $data['alamat'];				
+				$jurusan = $data['jurusan'];
 			}
 		}
 		else if($_GET['hal'] == "hapus")
@@ -161,7 +161,7 @@
 	  		<?php
 	  			$no = 1; 
 	  			$tampil = mysqli_query($koneksi, "SELECT * from siswa order by id desc");
-	  			while ($data = mysqli_fetch_array($tampil)) :
+	  			while ($data = mysqli_fetch_array($tampil)):
 	  		 ?>
 	  		<tr>
 	  			<td><?=$no++;?></td>
